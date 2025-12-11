@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube 视频下载器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube 视频下载器</h1>
+        
+        <div class="input-section">
+            <label for="video-url">视频链接：</label>
+            <input type="text" id="video-url" placeholder="https://www.youtube.com/watch?v=..." required>
+        </div>
+        
+        <div class="options-section">
+            <div class="option">
+                <label for="format-select">视频格式：</label>
+                <select id="format-select">
+                    <option value="137">MP4 1080p (仅视频)</option>
+                    <option value="136">MP4 720p (仅视频)</option>
+                    <option value="135">MP4 480p (仅视频)</option>
+                    <option value="134">MP4 360p (仅视频)</option>
+                    <option value="18">MP4 360p (视频+音频)</option>
+                    <option value="22">MP4 720p (视频+音频)</option>
+                </select>
+            </div>
+            
+            <div class="option">
+                <label for="output-path">保存路径：</label>
+                <input type="text" id="output-path" placeholder="output.mp4" required>
+                <button id="browse-btn">浏览</button>
+            </div>
+            
+            <div class="option">
+                <label for="proxy-input">代理设置（可选）：</label>
+                <input type="text" id="proxy-input" placeholder="http://localhost:1081">
+            </div>
+        </div>
+        
+        <div class="button-section">
+            <button id="download-btn" class="primary-btn">下载</button>
+            <button id="cancel-btn" class="secondary-btn" disabled>取消</button>
+        </div>
+        
+        <div class="progress-section">
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <div class="progress-info">
+                <span id="progress-percent">0%</span>
+                <span id="progress-speed">-</span>
+                <span id="progress-eta">-</span>
+            </div>
+        </div>
+        
+        <div class="log-section">
+            <h3>下载日志：</h3>
+            <div id="log-container"></div>
+        </div>
+    </div>
+    
+    <script src="renderer.js"></script>
+</body>
+</html>

@@ -48,6 +48,8 @@ ipcMain.handle('download-video', async (event, downloadOptions) => {
         // 构建参数
         const args = [
             url,
+            // '--cookies-from-browser',
+            // 'chrome',
             '-f',
             format || '137',
             '-o',
